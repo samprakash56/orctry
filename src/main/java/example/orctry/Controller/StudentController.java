@@ -31,7 +31,7 @@ public class StudentController {
     @GetMapping("/students/{id}")
     public ResponseEntity<Map<String,Object>> getStudentById(@PathVariable("id") Integer id) {
         Student student =  studentService.getStudentById(id);
-        Map<String,Object> response = new HashMap<>();
+        Map<String,Object> response = new HashMap<String, Object>();
         if (student == null){
             response.put("message","Student not found");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
